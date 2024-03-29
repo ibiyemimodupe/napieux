@@ -100,3 +100,18 @@ document.addEventListener("DOMContentLoaded", () => {
     resizeImages(clickToggle);
   });
 });
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  type: "loop",
+  spaceBetween: 1, // Adjust the space between slides
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
