@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --top-padding: 40px;
+}
+
+body {
+  padding-top: var(--top-padding);
+}
+
+.notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  z-index: 1000;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+  background-color: #181818;
+}
+.nav-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  max-width: 1440px;
+  width: 87%;
+  padding: 12px 0;
+  margin: auto;
+}
+
+/* .logo img {
+  height: 60px;
+} */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.burger div.toggle.line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger div.toggle.line2 {
+  opacity: 0;
+}
+
+.burger div.toggle.line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+.menu-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-icon img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* hero section */
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0px;
+  width: 87%;
+  margin: auto;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 100%;
+  gap: 20px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-title {
+  color: #1f2937;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.hero-description {
+  color: #314351;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-now-btn {
+  display: inline-block;
+  background-color: #56b70c;
+  color: white;
+  padding: 12px 24px;
+  /* font-size: 16px;  */
+  cursor: pointer;
+  border: none;
+  border-radius: 140px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #45a049;
+}
+.hero-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* partners section */
+
+.partners-section {
+  background-color: #f1f1f1;
+}
+
+.partners-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.partners-container ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.partners-container img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* feature section */
+.features-section {
+  padding: 41px 0;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1440px;
+  margin: auto;
+  gap: 20px;
+}
+
+.feature-item {
+  flex-basis: calc(
+    33.333% - 40px
+  ); /* Adjust basis for 3 items per row, subtracting the gap */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-image {
+  width: 100%;
+  max-width: 44px;
+  height: auto;
+}
+
+.feature-description {
+  margin-top: 16px;
+  color: #1f2937;
+}
+
+/* benefit section */
+.benefits-section {
+  padding: 20px;
+  width: 87%;
+  margin: auto;
+}
+
+.benefits-container {
+  display: flex;
+  max-width: 1440px;
+  margin: auto;
+  gap: 20px;
+}
+
+.benefit-main {
+  flex: 1 1 50%;
+  border-radius: 40px 40px 40px 0;
+  background-color: #cecbc34d;
+}
+
+.benefit-side-container {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefit-side {
+  flex-grow: 1;
+  background-color: #cecbc34d;
+}
+.side1 {
+  border-radius: 40px 0px 40px 0;
+}
+.side2 {
+  border-radius: 0px 40px 0px 40px;
+}
+.benefit-content {
+  padding: 32px;
+}
+.benefit-content h4 {
+  font-family: Marcellus;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  padding-bottom: 8px;
+}
+.benefit-content p {
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 26px;
+}
+.book-btn {
+  display: inline-block;
+  color: #56b70c;
+  padding: 30px 0px;
+}
+
+.benefit-image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  /* background: tan; */
+}
+
+.benefit-main,
+.benefit-side {
+  position: relative;
+  /* Other styles remain unchanged */
+}
+
+.benefit-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* Adjust the width and height of the image as necessary */
+}
+
+.benefit-content {
+  /* Ensure there's enough padding at the bottom of the container
+     so that the text does not overlap with the absolutely positioned image. */
+  padding-bottom: 50px; /* Adjust based on the actual size of your images */
+}
+
+@media screen and (max-width: 768px) {
+  .benefits-container,
+  .benefit-side-container {
+    flex-direction: column;
+  }
+
+  .benefit-main,
+  .benefit-side {
+    flex-basis: 100%;
+  }
+}
+
+/* product-feature */
+.product-features-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  margin: auto;
+  text-align: center;
+  width: 87%;
+  box-sizing: border-box;
+}
+.product-features-interaction {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.product-features-description {
+  padding: 60px 0;
+}
+.feature-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 84px 0 0 64px;
+  gap: 24px;
+  max-width: 300px;
+  flex-shrink: 0;
+}
+.feature-buttons button {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 12px;
+  border: 1px solid #080f340f;
+  box-shadow: 0px 4px 4px #080f340f;
+  transition: all 0.3s ease;
+}
+.feature-buttons button.active {
+  border-left: 4px solid black;
+}
+.feature-image-display {
+  gap: 10px;
+  flex-grow: 1;
+  max-width: 100%;
+}
+.image-resize {
+  width: 100%;
+  max-width: 45%;
+  object-fit: cover;
+  transition: width 0.6s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .product-features-interaction {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-image-display {
+    flex-direction: column;
+  }
+  .image-resize {
+    max-width: 80%;
+  }
+}

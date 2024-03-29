@@ -1,0 +1,78 @@
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 60px; /* Adjust based on your navbar's height */
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links.active {
+    transform: translateX(0%);
+  }
+
+  .burger {
+    display: block;
+  }
+  .menu-right {
+    display: flex;
+  }
+  :root {
+    --top-padding: 40px;
+  }
+
+  /* hero section */
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  .hero-image img {
+    max-width: 100%;
+  }
+  /* partners section */
+  .partners-container img {
+    width: 80px;
+  }
+  .partners-container ul {
+    gap: 20px;
+  }
+
+  /* feature section */
+  .feature-item {
+    flex-basis: calc(
+      50% - 40px
+    ); /* Adjust for 2 items per row on smaller screens */
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1040px) {
+  .partners-container ul {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-item {
+    flex-basis: 100%; /* Full width for very small screens */
+  }
+}
+
+@media screen and (max-width: 473px) {
+  :root {
+    --top-padding: 50px; /* Smaller padding for smaller screens */
+  }
+}
