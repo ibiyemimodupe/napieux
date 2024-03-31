@@ -37,10 +37,6 @@ body {
   margin: auto;
 }
 
-/* .logo img {
-  height: 60px;
-} */
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -152,6 +148,7 @@ body {
   width: 100%;
   max-width: 600px;
   height: auto;
+  border-radius: 200px 0px 200px 0px;
 }
 
 /* partners section */
@@ -281,26 +278,21 @@ body {
   width: 100%;
   max-width: 250px;
   height: auto;
-  /* background: tan; */
 }
 
 .benefit-main,
 .benefit-side {
   position: relative;
-  /* Other styles remain unchanged */
 }
 
 .benefit-image {
   position: absolute;
   bottom: 0;
   right: 0;
-  /* Adjust the width and height of the image as necessary */
 }
 
 .benefit-content {
-  /* Ensure there's enough padding at the bottom of the container
-     so that the text does not overlap with the absolutely positioned image. */
-  padding-bottom: 50px; /* Adjust based on the actual size of your images */
+  padding-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
@@ -333,6 +325,7 @@ body {
 }
 .product-features-description {
   padding: 60px 0;
+  text-align: center;
 }
 .feature-buttons {
   display: flex;
@@ -380,9 +373,6 @@ body {
   .feature-image-display {
     flex-direction: column;
   }
-  /* .image-resize {
-    max-width: 80%;
-  } */
   .feature-buttons {
     flex-wrap: wrap;
     padding: 0 0 30px 0;
@@ -398,48 +388,53 @@ body {
 /* coool feature section */
 .cool-features-container {
   display: flex;
-  gap: 1px; /* Gap between the details and the image */
+  gap: 1px;
 }
 .cool-features {
   max-width: 1440px;
   width: 87%;
   margin: auto;
+  padding-bottom: 5rem;
 }
 .cool-features-details {
-  flex: 70%; /* First section takes up 70% */
+  flex: 70%;
   display: flex;
   background: linear-gradient(rgb(242, 244, 246), rgb(87, 131, 196));
-  flex-direction: column; /* Distribute space evenly */
+  flex-direction: column;
+  gap: 44px;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .cool-features-list {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Gap between feature items */
+  gap: 10px;
 }
 
 .cool-feature-item {
   display: flex;
-  align-items: center; /* Aligns items vertically in the center */
-  gap: 10px; /* Gap between img and paragraph */
+  align-items: center;
+  gap: 10px;
 }
 
 .cool-feature-item img {
-  width: 20px; /* Adjust based on your design */
-  height: auto; /* Maintain aspect ratio */
+  width: 20px;
+  height: auto;
 }
 
 .cool-features-image {
-  flex: 30%; /* Second section (with the pillows image) takes up 30% */
+  flex: 30%;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center the image */
+  align-items: center;
 }
 
 .cool-features-image img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure it doesn't overflow */
+  height: auto;
+  max-width: 100%;
 }
 .booked-btn {
   padding: 10px 20px;
@@ -449,17 +444,31 @@ body {
   border-radius: 10px;
   display: inline-block;
 }
+@media screen and (max-width: 768px) {
+  .cool-features-image img {
+    width: auto;
+    height: 100%;
+    max-width: auto;
+  }
+
+  .cool-features-image {
+    height: 100%;
+  }
+
+  .cool-features-details,
+  .cool-features-image {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
 .swiper {
   width: 100%;
   height: 100%;
+  border-radius: 40px;
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -472,4 +481,161 @@ body {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: black;
+  padding: 15px 20px;
+  width: 14px;
+  height: 20px;
+  border-radius: 6px;
+  background: #dedede42;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: black;
+  font-size: 20px;
+}
+.swiper-pagination-bullet {
+  width: 32px;
+  height: 2px;
+  background-color: black;
+  border-radius: 0;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000;
+}
+
+/* client-review section */
+
+.trustpilot-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.rating-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-and-reviews {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rating-and-reviews img {
+  width: 16px;
+  height: auto;
+}
+
+.rating-info span {
+  color: #b0b0b0;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 12.83px;
+}
+
+.scroller {
+  width: 100%;
+  margin: auto;
+}
+
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  flex-wrap: nowrap;
+  -webkit-animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@-webkit-keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+.client-review-section {
+  background-color: #f5f5f5;
+}
+.client-review-container {
+  max-width: 1440px;
+  margin: auto;
+  text-align: center;
+  padding: 50px 0;
+}
+.reviews-section-cont {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+.reviews-container {
+  display: flex;
+  width: 470px;
+  height: auto;
+  gap: 20px;
+  border-radius: 24px 0px 0px 0px;
+  opacity: 0px;
+  background: white;
+  padding: 11px;
+  box-shadow: 0px 6px 18px 0px #080f340d;
+  text-align: left;
+}
+.reviews-cont-img img {
+  width: 190px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 24px 0px 24px 0px;
 }
