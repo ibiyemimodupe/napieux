@@ -116,6 +116,30 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+var swiper1 = new Swiper(".mySwiper1", {
+  slidesPerView: 3,
+  loop: true,
+  spaceBetween: 1,
+  navigation: {
+    nextEl: ".swiper1-button-next", // Unique next button for Swiper 2
+    prevEl: ".swiper1-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 1,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 1,
+    },
+    960: {
+      slidesPerView: 3,
+      spaceBetween: 1,
+    },
+  },
+});
+
 const scrollers = document.querySelectorAll(".scroller");
 
 // If a user hasn't opted in for recuded motion, then we add the animation

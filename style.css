@@ -639,3 +639,138 @@ body {
   object-fit: cover;
   border-radius: 24px 0px 24px 0px;
 }
+
+/* client-comfort-section */
+.client-comfort-section {
+  max-width: 1440px;
+  margin: auto;
+}
+.client-comfort-header h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+.client-comfort-header p {
+  text-align: center;
+}
+.client-comfort-cont {
+  width: 385px;
+  height: auto;
+  padding: 30px;
+  border-radius: 60px 0px 60px 0px;
+  background-color: #cecbc333;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.client-comfort-cont p {
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: left;
+}
+.c3-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.swiper1-button-next,
+.swiper1-button-prev {
+  color: #56b70c;
+}
+.swiper1-button-next::after,
+.swiper1-button-prev::after {
+  color: #56b70c;
+}
+.mySwiper1 {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 95%;
+  margin: auto;
+}
+
+/* product highlight  */
+.product-highlights-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 30px;
+}
+
+.highlight-items-container {
+  display: flex;
+  justify-content: space-around; /* Evenly space the items */
+  gap: 20px; /* Add space between items */
+  max-width: 1440px; /* Adjust based on your preference */
+  margin: auto;
+}
+
+.highlight-item {
+  max-width: 350px;
+  text-align: center;
+  height: 400px;
+  padding: 20px;
+  border-radius: 24px 0px 24px 0px;
+}
+.highlight-item h5 {
+  text-align: left;
+  font-family: Marcellus;
+  font-size: 22.89px;
+  font-weight: 400;
+  line-height: 28.71px;
+  color: wheat;
+}
+.shop-link {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: white; /* Example button color */
+  color: black;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 26px; /* Rounded button edges */
+}
+.cover1 {
+  background-image: url("images/covers1.jpg");
+  background-position: center;
+  background-size: cover; /* Example: Reduces the width of the image to 50% of the container */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover2 {
+  background-image: url("images/covers2.jpg");
+  background-position: center;
+  background-size: cover; /* Adjusts the size similarly */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover3 {
+  background-image: url("images/covers3.jpg");
+  background-position: center;
+  background-size: cover; /* Consistent sizing across all */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .highlight-items {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+  .highlight-items-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .highlight-item {
+    max-width: 360px;
+    height: 284px;
+    border-radius: 32px 0px 32px 0px;
+  }
+}
