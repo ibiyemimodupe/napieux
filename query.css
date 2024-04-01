@@ -54,6 +54,18 @@
       50% - 40px
     ); /* Adjust for 2 items per row on smaller screens */
   }
+
+  /* accordion */
+  .accordion-section-cont {
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px 0;
+  }
+  .accordion,
+  .hero2-img {
+    width: 87%;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1040px) {

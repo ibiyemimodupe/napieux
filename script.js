@@ -166,3 +166,76 @@ function addAnimation() {
     });
   });
 }
+
+// document.querySelectorAll(".accordion-button").forEach((button) => {
+//   button.addEventListener("click", () => {
+//     const accordionContent = button.nextElementSibling;
+
+//     button.classList.toggle("active");
+//     if (button.classList.contains("active")) {
+//       accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+//     } else {
+//       accordionContent.style.maxHeight = null;
+//     }
+//   });
+// });
+document.querySelectorAll(".accordion-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const currentlyActiveAccordionButton = document.querySelector(
+      ".accordion-button.active"
+    );
+    const accordionContent = button.nextElementSibling;
+
+    if (
+      currentlyActiveAccordionButton &&
+      currentlyActiveAccordionButton !== button
+    ) {
+      currentlyActiveAccordionButton.classList.toggle("active");
+      currentlyActiveAccordionButton.nextElementSibling.style.maxHeight = null;
+    }
+
+    button.classList.toggle("active");
+    if (button.classList.contains("active")) {
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+    } else {
+      accordionContent.style.maxHeight = null;
+    }
+  });
+});
+// const firstAccordionButton = document.querySelector(".accordion-button");
+// if (firstAccordionButton) {
+//   firstAccordionButton.classList.add("active");
+//   const firstAccordionContent = firstAccordionButton.nextElementSibling;
+//   firstAccordionContent.style.maxHeight =
+//     firstAccordionContent.scrollHeight + "px";
+// }
+
+document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const heroFooterText = toggle.nextElementSibling;
+
+    // Check if the clicked toggle is already active
+    if (toggle.classList.contains("active")) {
+      // It's active, so remove the class and hide the content
+      toggle.classList.remove("active");
+      heroFooterText.style.maxHeight = null;
+      setTimeout(() => (heroFooterText.style.display = "none"), 300);
+    } else {
+      // It's not active, so first close any already open sections
+      document
+        .querySelectorAll(".accordion-toggle.active")
+        .forEach((activeToggle) => {
+          activeToggle.classList.remove("active");
+          activeToggle.nextElementSibling.style.maxHeight = null;
+          setTimeout(
+            () => (activeToggle.nextElementSibling.style.display = "none"),
+            300
+          );
+        });
+      // Then open the clicked section
+      toggle.classList.add("active");
+      heroFooterText.style.display = "block";
+      heroFooterText.style.maxHeight = heroFooterText.scrollHeight + "px";
+    }
+  });
+});

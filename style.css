@@ -106,7 +106,7 @@ body {
 
 .hero-content {
   flex: 1;
-  min-width: 300px;
+  /* min-width: 300px; */
 }
 
 .hero-title {
@@ -772,5 +772,383 @@ body {
     max-width: 360px;
     height: 284px;
     border-radius: 32px 0px 32px 0px;
+  }
+}
+
+/* accordion section */
+.accordion-section {
+  max-width: 1440px;
+  margin: auto;
+  width: 87%;
+  text-align: center;
+}
+.accordion-section-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+.accordion {
+  max-width: 500px;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.accordion-item {
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0px 3.370535373687744px 10.785713195800781px 0px #080f340f;
+}
+.accordion-button {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: white;
+  transition: background-color 0.5s ease;
+}
+
+.accordion-button.active {
+  border-top: 3px solid #56b70c;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+.accordion-button .arrow {
+  /* content: "\203A"; */
+  font-size: 25px;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3.370535373687744px 10.785713195800781px 0px #080f340f;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+.accordion-button.active .arrow {
+  background-color: black;
+  color: white;
+  transform: rotate(90deg);
+}
+
+.accordion-content p {
+  padding: 10px;
+  text-align: left;
+}
+.hero2-img img {
+  width: 100%;
+  max-width: 530px;
+  height: auto;
+  border-radius: 60px 0px 60px 0px;
+}
+.hero2-img {
+  width: 50%;
+}
+
+/* contact-section */
+.contact-section {
+  max-width: 1440px;
+  margin: auto;
+  width: 87%;
+  padding-bottom: 20px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.contact-sec-item {
+  background-image: url("images/frame-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  margin: auto;
+  border-radius: 60px 0px 60px 0px;
+  display: flex;
+  justify-content: space-between; /* Ensure content and image are spaced properly */
+  color: white;
+  overflow: hidden; /* Keep everything within the rounded corners */
+}
+
+.contact-sec-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 90px 0px 90px 80px;
+}
+
+.hero3-img {
+  flex-shrink: 0; /* Prevent image container from shrinking */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the image vertically */
+}
+
+.hero3-img img {
+  max-width: 500px; /* Adjust width automatically */
+  height: auto; /* Set height to fill the container */
+  max-height: 100%; /* Ensure it doesn't exceed the container's height */
+  object-fit: cover; /* Cover the area of the container without stretching */
+  border-radius: 60px 0px 60px 0px;
+}
+.contact-sec-text p {
+  max-width: 450px;
+  margin: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-sec-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-sec-text,
+  .hero3-img {
+    width: 90%; /* Adjust width on smaller screens */
+    padding: 40px 20px; /* Adjust padding for smaller screens */
+  }
+
+  .hero3-img img {
+    width: 100%; /* Full width for smaller screens */
+    max-height: none;
+    height: auto; /* Adjust height automatically */
+  }
+}
+@media (min-width: 769px) and (max-width: 950px) {
+  .contact-sec-item {
+    flex-direction: row; /* Keep the row direction for larger views */
+    align-items: stretch; /* Ensure items stretch to fill the container height */
+    height: 300px;
+  }
+
+  .contact-sec-text,
+  .hero3-img {
+    flex: 1;
+  }
+
+  .hero3-img img {
+    width: 100%; /* Adjust width to be responsive within the container */
+    max-width: 300px; /* Limit the image's maximum width to prevent it from taking too much space */
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    object-fit: scale-down; /* Scale down the image to fit while preserving its aspect ratio without cropping */
+  }
+}
+
+footer {
+  width: 100%;
+  background: black;
+  color: white;
+  border-radius: 60px 60px 0px 0px;
+}
+.hero-footer-container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 60px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.hero-footer-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.hero-footer-social-icons {
+  display: flex;
+  gap: 20px;
+}
+.hero-footer-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.hero-footer-info {
+  display: flex;
+  gap: 20px;
+}
+.hero-footer-text {
+  flex: 1;
+  text-decoration: none;
+}
+.hero-footer-text ul {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* text-align: left; */
+}
+.hero-footer-logo p {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  /* text-align: left; */
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.hero-footer-text h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0em;
+  /* text-align: left; */
+  padding-bottom: 21px;
+}
+.trademark {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 0 !important;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+}
+.email-subscribe-container {
+  position: relative;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 25px; /* Rounded corners for the container */
+  overflow: hidden; /* Ensures the button stays within the container's rounded corners */
+  display: flex; /* Aligns the input and button horizontally */
+}
+
+.email-input {
+  width: 100%;
+  border: none;
+  /* max-width: 400px; */
+  padding: 10px 20px;
+  border-radius: 25px; /* Rounded corners for the input */
+  outline: none; /* Removes the outline to keep the style clean */
+  background: #ffffff1a;
+}
+
+.subscribe-btn {
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: #fafbfc; /* Example button color */
+  color: rgb(17, 11, 11);
+  padding: 10px 20px; /* Adjust as needed */
+  border-radius: 39px; /* Rounded corners on the right side */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Adjusts the button to match the input height */
+.email-input:focus + .subscribe-btn,
+.subscribe-btn:focus {
+  outline: none;
+}
+
+/* Optionally, style the button on hover for better user experience */
+.subscribe-btn:hover {
+  background-color: #56b70c; /* Darker shade on hover */
+}
+@media (max-width: 768px) {
+  .hero-footer-container {
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 30px; /* Add space between vertically stacked items */
+  }
+
+  .hero-footer-section {
+    text-align: center; /* Center text */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 20px;
+  }
+  .hero-footer-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .accordion-toggle::after {
+    content: "\203A"; /* Add the right-pointing angle quotation mark */
+    display: inline-block;
+    margin-left: 50px; /* Add space between the toggle text and the arrow */
+    transform: rotate(0); /* Default state, not rotated */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for rotation */
+  }
+
+  .accordion-toggle.active::after {
+    transform: rotate(90deg); /* Rotate arrow when active */
+  }
+  .hero-footer-social-icons {
+    justify-content: center; /* Center-align social icons for better aesthetics */
+  }
+
+  .email-input,
+  .subscribe-btn {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .email-subscribe-container {
+    max-width: 100%; /* Allow the email subscribe container to fill available space */
+    margin: 20px 0; /* Add some margin above and below */
+  }
+
+  .hero-footer-text h3,
+  .hero-footer-logo p,
+  .hero-footer-text ul {
+    font-size: 14px; /* Adjust font size for readability on smaller screens */
+  }
+
+  .trademark {
+    padding-bottom: 1rem;
+  }
+
+  .hero-footer-text ul {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .accordion-toggle.active + ul {
+    display: block;
+    max-height: 500px; /* Adjust this value based on your content */
+    transition: max-height 0.5s ease-out;
+  }
+
+  .accordion-toggle {
+    cursor: pointer;
+  }
+  .accordion-toggle {
+    padding-bottom: 10px; /* Provides space for the border */
+    transition: border-bottom 0.3s ease-in-out; /* Smooth transition for adding the border */
+  }
+
+  /* When active, add a bottom border */
+  .accordion-toggle.active {
+    border-bottom: 2px solid white;
   }
 }
