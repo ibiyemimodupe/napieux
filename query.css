@@ -33,12 +33,14 @@
   .hero-container {
     flex-direction: column;
     align-items: center;
+    gap: 40px;
   }
   .hero-content {
     text-align: center;
   }
   .hero-image img {
     max-width: 100%;
+    border-radius: 80px 0px 80px 0px;
   }
   /* partners section */
   .partners-container img {

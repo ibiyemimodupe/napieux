@@ -425,6 +425,9 @@ body {
 }
 
 .cool-features-image {
+  background-image: url("images/white-pillows.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   flex: 30%;
   display: flex;
   justify-content: center;
@@ -445,21 +448,10 @@ body {
   display: inline-block;
 }
 @media screen and (max-width: 768px) {
-  .cool-features-image img {
-    width: auto;
-    height: 100%;
-    max-width: auto;
-  }
-
-  .cool-features-image {
-    height: 100%;
-  }
-
-  .cool-features-details,
-  .cool-features-image {
+  /* .cool-features-details {
     width: 100%;
     flex-basis: auto;
-  }
+  } */
 }
 
 .swiper {
@@ -718,7 +710,7 @@ body {
   font-size: 22.89px;
   font-weight: 400;
   line-height: 28.71px;
-  color: wheat;
+  color: black;
 }
 .shop-link {
   display: inline-block;
@@ -867,7 +859,7 @@ body {
   max-width: 1440px;
   margin: auto;
   width: 87%;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   /* display: flex;
   justify-content: center;
   align-items: center; */
@@ -920,8 +912,7 @@ body {
     text-align: center;
   }
 
-  .contact-sec-text,
-  .hero3-img {
+  .contact-sec-text {
     width: 90%; /* Adjust width on smaller screens */
     padding: 40px 20px; /* Adjust padding for smaller screens */
   }
@@ -929,6 +920,7 @@ body {
   .hero3-img img {
     width: 100%; /* Full width for smaller screens */
     max-height: none;
+    padding: 40px 20px;
     height: auto; /* Adjust height automatically */
   }
 }
@@ -952,6 +944,7 @@ body {
   }
 }
 
+/* footer */
 footer {
   width: 100%;
   background: black;
@@ -1000,7 +993,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* text-align: left; */
 }
 .hero-footer-logo p {
   font-family: "Roboto", sans-serif;
@@ -1008,7 +1000,6 @@ footer {
   font-weight: 400;
   line-height: 22px;
   letter-spacing: 0em;
-  /* text-align: left; */
   margin-top: 16px;
   margin-bottom: 32px;
 }
@@ -1018,7 +1009,6 @@ footer {
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 0em;
-  /* text-align: left; */
   padding-bottom: 21px;
 }
 .trademark {
@@ -1035,18 +1025,17 @@ footer {
   position: relative;
   max-width: 400px;
   border: 1px solid #ccc;
-  border-radius: 25px; /* Rounded corners for the container */
-  overflow: hidden; /* Ensures the button stays within the container's rounded corners */
-  display: flex; /* Aligns the input and button horizontally */
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
 }
 
 .email-input {
   width: 100%;
   border: none;
-  /* max-width: 400px; */
   padding: 10px 20px;
-  border-radius: 25px; /* Rounded corners for the input */
-  outline: none; /* Removes the outline to keep the style clean */
+  border-radius: 25px;
+  outline: none;
   background: #ffffff1a;
 }
 
@@ -1054,35 +1043,41 @@ footer {
   position: absolute;
   right: 0;
   border: none;
-  background-color: #fafbfc; /* Example button color */
+  background-color: #fafbfc;
   color: rgb(17, 11, 11);
-  padding: 10px 20px; /* Adjust as needed */
-  border-radius: 39px; /* Rounded corners on the right side */
-  cursor: pointer; /* Changes cursor to pointer on hover */
+  padding: 10px 20px;
+  border-radius: 39px;
+  cursor: pointer;
 }
 
-/* Adjusts the button to match the input height */
 .email-input:focus + .subscribe-btn,
 .subscribe-btn:focus {
   outline: none;
 }
 
-/* Optionally, style the button on hover for better user experience */
-.subscribe-btn:hover {
-  background-color: #56b70c; /* Darker shade on hover */
-}
 @media (max-width: 768px) {
   .hero-footer-container {
     padding: 40px 20px;
     flex-direction: column;
-    gap: 30px; /* Add space between vertically stacked items */
+    gap: 30px;
   }
-
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-brand img {
+    max-width: 185px;
+    width: 100%;
+    height: auto;
+  }
+  .hero-footer-logo {
+    width: 80%;
+  }
   .hero-footer-section {
-    text-align: center; /* Center text */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
+    align-items: center;
     gap: 20px;
   }
   .hero-footer-info {
@@ -1092,34 +1087,24 @@ footer {
     gap: 20px;
   }
   .accordion-toggle::after {
-    content: "\203A"; /* Add the right-pointing angle quotation mark */
+    content: "\203A";
     display: inline-block;
-    margin-left: 50px; /* Add space between the toggle text and the arrow */
-    transform: rotate(0); /* Default state, not rotated */
-    transition: transform 0.5s ease-in-out; /* Smooth transition for rotation */
+    font-size: 25px;
+    margin-left: 50px;
+    transform: rotate(0);
+    transition: transform 0.5s ease-in-out;
   }
 
   .accordion-toggle.active::after {
-    transform: rotate(90deg); /* Rotate arrow when active */
+    transform: rotate(90deg);
   }
   .hero-footer-social-icons {
-    justify-content: center; /* Center-align social icons for better aesthetics */
-  }
-
-  .email-input,
-  .subscribe-btn {
-    padding: 10px; /* Adjust padding for smaller screens */
+    justify-content: center;
   }
 
   .email-subscribe-container {
-    max-width: 100%; /* Allow the email subscribe container to fill available space */
-    margin: 20px 0; /* Add some margin above and below */
-  }
-
-  .hero-footer-text h3,
-  .hero-footer-logo p,
-  .hero-footer-text ul {
-    font-size: 14px; /* Adjust font size for readability on smaller screens */
+    max-width: 100%;
+    margin: 20px 0;
   }
 
   .trademark {
@@ -1130,25 +1115,28 @@ footer {
     display: none;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
   }
 
   .accordion-toggle.active + ul {
     display: block;
-    max-height: 500px; /* Adjust this value based on your content */
+    max-height: 500px;
     transition: max-height 0.5s ease-out;
   }
 
   .accordion-toggle {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
     cursor: pointer;
+    padding-bottom: 10px;
+    transition: border-bottom 0.3s ease-in-out;
   }
-  .accordion-toggle {
-    padding-bottom: 10px; /* Provides space for the border */
-    transition: border-bottom 0.3s ease-in-out; /* Smooth transition for adding the border */
-  }
-
-  /* When active, add a bottom border */
   .accordion-toggle.active {
     border-bottom: 2px solid white;
+  }
+
+  .hero-footer-text li {
+    padding: 10px;
   }
 }

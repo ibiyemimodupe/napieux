@@ -167,18 +167,6 @@ function addAnimation() {
   });
 }
 
-// document.querySelectorAll(".accordion-button").forEach((button) => {
-//   button.addEventListener("click", () => {
-//     const accordionContent = button.nextElementSibling;
-
-//     button.classList.toggle("active");
-//     if (button.classList.contains("active")) {
-//       accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-//     } else {
-//       accordionContent.style.maxHeight = null;
-//     }
-//   });
-// });
 document.querySelectorAll(".accordion-button").forEach((button) => {
   button.addEventListener("click", () => {
     const currentlyActiveAccordionButton = document.querySelector(
@@ -202,40 +190,44 @@ document.querySelectorAll(".accordion-button").forEach((button) => {
     }
   });
 });
-// const firstAccordionButton = document.querySelector(".accordion-button");
-// if (firstAccordionButton) {
-//   firstAccordionButton.classList.add("active");
-//   const firstAccordionContent = firstAccordionButton.nextElementSibling;
-//   firstAccordionContent.style.maxHeight =
-//     firstAccordionContent.scrollHeight + "px";
-// }
 
 document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
   toggle.addEventListener("click", () => {
-    const heroFooterText = toggle.nextElementSibling;
+    const ul = toggle.nextElementSibling;
+    const isActive = toggle.classList.contains("active");
 
-    // Check if the clicked toggle is already active
-    if (toggle.classList.contains("active")) {
-      // It's active, so remove the class and hide the content
+    // If the clicked accordion is already active, skip the collapsing animation
+    if (isActive) {
       toggle.classList.remove("active");
-      heroFooterText.style.maxHeight = null;
-      setTimeout(() => (heroFooterText.style.display = "none"), 300);
+      setTimeout(() => {
+        ul.style.maxHeight = "0";
+      }, 10); // Short delay before collapsing to allow any ongoing transition to adapt
     } else {
-      // It's not active, so first close any already open sections
-      document
-        .querySelectorAll(".accordion-toggle.active")
-        .forEach((activeToggle) => {
-          activeToggle.classList.remove("active");
-          activeToggle.nextElementSibling.style.maxHeight = null;
-          setTimeout(
-            () => (activeToggle.nextElementSibling.style.display = "none"),
-            300
-          );
-        });
-      // Then open the clicked section
+      // First, close any active accordion by resetting its maxHeight
+      document.querySelectorAll(".accordion-toggle").forEach((t) => {
+        if (t !== toggle) {
+          t.classList.remove("active");
+          t.nextElementSibling.style.maxHeight = "0";
+        }
+      });
+
+      // Then, expand the clicked accordion
       toggle.classList.add("active");
-      heroFooterText.style.display = "block";
-      heroFooterText.style.maxHeight = heroFooterText.scrollHeight + "px";
+      ul.style.paddingTop = "20px";
+      ul.style.maxHeight = ul.scrollHeight + "px"; // Dynamically adjust maxHeight based on content
     }
   });
+});
+
+// Optional: close accordion when clicking outside
+document.addEventListener("click", function (e) {
+  const isToggle =
+    e.target.matches(".accordion-toggle") ||
+    e.target.closest(".accordion-toggle");
+  if (!isToggle) {
+    document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
+      toggle.classList.remove("active");
+      toggle.nextElementSibling.style.maxHeight = "0";
+    });
+  }
 });
