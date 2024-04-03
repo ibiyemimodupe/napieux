@@ -18,18 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".feature-buttons button");
   if (!buttons) return;
 
-  // Set up click event listeners for each button
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
-      // Remove active class from all buttons
       buttons.forEach((btn) => {
         btn.classList.remove("active");
       });
 
-      // Add active class to clicked button
       this.classList.add("active");
 
-      // Update image src
       const imgSrc1 = this.getAttribute("data-img-src1");
       const imgSrc2 = this.getAttribute("data-img-src2");
       document.getElementById("feature-image1").src = imgSrc1;
@@ -37,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Automatically set the first button as active
   if (buttons.length > 0) {
     buttons[0].classList.add("active");
     // Optionally, set the image associated with the first button as visible
@@ -51,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".image-resize");
   if (images.length < 2) return;
 
-  // Function to resize images
   function resizeImages(leftBig) {
     if (leftBig) {
       images[0].style.width = "60%";
@@ -62,18 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Set default image sizes to 60/40 on page load
   resizeImages(true);
 
-  // Mouse move event on the window to detect hover side
   window.addEventListener("mousemove", (e) => {
     const screenWidth = window.innerWidth;
     const hoverSideLeft = e.clientX < screenWidth / 2;
     resizeImages(hoverSideLeft);
   });
 
-  // Click event to toggle images size
-  let clickToggle = false; // Track the click toggle state
+  let clickToggle = false;
   window.addEventListener("click", () => {
     clickToggle = !clickToggle;
     resizeImages(clickToggle);
@@ -83,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   loop: true,
-  spaceBetween: 1, // Adjust the space between slides
+  spaceBetween: 1,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -100,7 +91,7 @@ var swiper1 = new Swiper(".mySwiper1", {
   loop: true,
   spaceBetween: 1,
   navigation: {
-    nextEl: ".swiper1-button-next", // Unique next button for Swiper 2
+    nextEl: ".swiper1-button-next",
     prevEl: ".swiper1-button-prev",
   },
   breakpoints: {
@@ -121,23 +112,17 @@ var swiper1 = new Swiper(".mySwiper1", {
 
 const scrollers = document.querySelectorAll(".scroller");
 
-// If a user hasn't opted in for recuded motion, then we add the animation
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 }
 
 function addAnimation() {
   scrollers.forEach((scroller) => {
-    // add data-animated="true" to every `.scroller` on the page
     scroller.setAttribute("data-animated", true);
 
-    // Make an array from the elements within `.scroller-inner`
     const scrollerInner = scroller.querySelector(".scroller__inner");
     const scrollerContent = Array.from(scrollerInner.children);
 
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
@@ -175,14 +160,12 @@ document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
     const ul = toggle.nextElementSibling;
     const isActive = toggle.classList.contains("active");
 
-    // If the clicked accordion is already active, skip the collapsing animation
     if (isActive) {
       toggle.classList.remove("active");
       setTimeout(() => {
         ul.style.maxHeight = "0";
-      }, 10); // Short delay before collapsing to allow any ongoing transition to adapt
+      }, 10);
     } else {
-      // First, close any active accordion by resetting its maxHeight
       document.querySelectorAll(".accordion-toggle").forEach((t) => {
         if (t !== toggle) {
           t.classList.remove("active");
@@ -190,15 +173,13 @@ document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
         }
       });
 
-      // Then, expand the clicked accordion
       toggle.classList.add("active");
       ul.style.paddingTop = "20px";
-      ul.style.maxHeight = ul.scrollHeight + "px"; // Dynamically adjust maxHeight based on content
+      ul.style.maxHeight = ul.scrollHeight + "px";
     }
   });
 });
 
-// Optional: close accordion when clicking outside
 document.addEventListener("click", function (e) {
   const isToggle =
     e.target.matches(".accordion-toggle") ||
@@ -264,6 +245,6 @@ document.addEventListener("DOMContentLoaded", function () {
 function toggleDropdown(id) {
   var content = document.getElementById(id);
   content.style.display = content.style.display === "block" ? "none" : "block";
-  // Toggle active class to rotate arrow
+
   content.previousElementSibling.classList.toggle("active");
 }

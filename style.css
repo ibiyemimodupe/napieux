@@ -326,18 +326,6 @@ body {
   padding-bottom: 50px;
 }
 
-@media screen and (max-width: 768px) {
-  .benefits-container,
-  .benefit-side-container {
-    flex-direction: column;
-  }
-
-  .benefit-main,
-  .benefit-side {
-    flex-basis: 100%;
-  }
-}
-
 /* product-feature */
 .product-features-container {
   display: flex;
@@ -412,26 +400,7 @@ body {
 #feature-image2 {
   border-radius: 0 20px 20px 0;
 }
-@media screen and (max-width: 768px) {
-  .product-features-interaction {
-    flex-direction: column;
-    align-items: center;
-  }
-  .feature-image-display {
-    flex-direction: column;
-  }
-  .feature-buttons {
-    flex-wrap: wrap;
-    padding: 0 0 30px 0;
-    flex-direction: row;
-    max-width: 400px;
-    justify-content: center;
-    align-items: center;
-  }
-  .product-features-description {
-    padding-bottom: 32px;
-  }
-}
+
 /* coool feature section */
 .cool-features-container {
   display: flex;
@@ -890,22 +859,6 @@ body {
   justify-content: space-between;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .highlight-items {
-    flex-direction: column;
-  }
-  .highlight-items-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .highlight-item {
-    max-width: 360px;
-    height: 284px;
-    border-radius: 32px 0px 32px 0px;
-  }
-}
-
 /* accordion section */
 .accordion-section {
   max-width: 1440px;
@@ -1071,45 +1024,6 @@ body {
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .contact-sec-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contact-sec-text {
-    width: 90%;
-    padding: 40px 20px;
-  }
-
-  .hero3-img img {
-    width: 100%;
-    max-height: none;
-    padding: 40px 20px;
-    height: auto;
-  }
-}
-@media (min-width: 769px) and (max-width: 1000px) {
-  .contact-sec-item {
-    flex-direction: row;
-    align-items: stretch;
-    /* height: 370px; */
-  }
-
-  .contact-sec-text,
-  .hero3-img {
-    flex: 1;
-  }
-
-  .hero3-img img {
-    width: 100%;
-    /* max-width: 300px; */
-    height: auto;
-    object-fit: scale-down;
-  }
-}
-
 /* footer */
 footer {
   width: 100%;
@@ -1217,92 +1131,6 @@ footer {
   outline: none;
 }
 
-@media (max-width: 768px) {
-  .hero-footer-container {
-    padding: 40px 20px;
-    flex-direction: column;
-    gap: 30px;
-  }
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .navbar-brand img {
-    max-width: 185px;
-    width: 100%;
-    height: auto;
-  }
-  .hero-footer-logo {
-    width: 80%;
-  }
-  .hero-footer-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .hero-footer-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .accordion-toggle::after {
-    content: "\203A";
-    display: inline-block;
-    font-size: 25px;
-    margin-left: 50px;
-    transform: rotate(0);
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .accordion-toggle.active::after {
-    transform: rotate(90deg);
-  }
-  .hero-footer-social-icons {
-    justify-content: center;
-  }
-
-  .email-subscribe-container {
-    max-width: 100%;
-    margin: 20px 0;
-  }
-
-  .trademark {
-    padding-bottom: 1rem;
-  }
-
-  .hero-footer-text ul {
-    display: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-  }
-
-  .accordion-toggle.active + ul {
-    display: block;
-    max-height: 500px;
-    transition: max-height 0.5s ease-out;
-  }
-
-  .accordion-toggle {
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    padding-bottom: 10px;
-    transition: border-bottom 0.3s ease-in-out;
-  }
-  .accordion-toggle.active {
-    border-bottom: 2px solid white;
-  }
-
-  .hero-footer-text li {
-    padding: 10px;
-  }
-}
-
 /* product page */
 
 /* soft section */
@@ -1352,7 +1180,6 @@ footer {
   color: #333;
   margin-bottom: 15px;
   font-size: clamp(20px, 2.5vw, 22.89px);
-  font-weight: 400;
   line-height: 1.25;
 }
 
@@ -1362,25 +1189,6 @@ footer {
   font-size: clamp(14px, 2vw, 16px);
   font-weight: 400;
   line-height: 20px;
-}
-@media (max-width: 768px) {
-  .soft-section {
-    padding-bottom: 50px;
-  }
-  .soft-container {
-    flex-direction: column;
-  }
-  .soft-image,
-  .soft-image2,
-  .soft-content {
-    width: 100%;
-  }
-  .soft-flip {
-    flex-direction: column-reverse;
-  }
-  .soft-image img {
-    max-width: 100%;
-  }
 }
 
 /* splide slides */
@@ -1439,7 +1247,9 @@ footer {
   border-bottom: 1px solid #c4c4c4;
 }
 .icon {
-  margin-right: 5px;
+  align-items: center;
+  display: flex;
+  gap: 10px;
 }
 .arrow {
   transition: transform 0.5s ease;
