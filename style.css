@@ -1050,7 +1050,7 @@ body {
 }
 
 .hero3-img img {
-  max-width: 500px;
+  max-width: 560px;
   height: auto;
   max-height: 100%;
   object-fit: cover;
@@ -1090,7 +1090,7 @@ body {
     height: auto;
   }
 }
-@media (min-width: 769px) and (max-width: 950px) {
+@media (min-width: 769px) and (max-width: 1000px) {
   .contact-sec-item {
     flex-direction: row;
     align-items: stretch;
@@ -1104,7 +1104,7 @@ body {
 
   .hero3-img img {
     width: 100%;
-    max-width: 300px;
+    /* max-width: 300px; */
     height: auto;
     object-fit: scale-down;
   }
