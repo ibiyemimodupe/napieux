@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <link rel="stylesheet" href="splide.min.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="query.css" />
   </head>
@@ -59,6 +60,161 @@
         </div>
       </div>
     </nav>
+
+    <section class="product-showcase">
+      <div class="showcase-container">
+        <div class="slider-container">
+          <!-- Main Slider -->
+          <section
+            id="main-slider-1"
+            class="splide"
+            aria-label="My Awesome Gallery"
+          >
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/1000x1000?sig=1"
+                    alt="image"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/1000x1000?sig=2"
+                    alt="image"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/1000x1000?sig=3"
+                    alt="image"
+                  />
+                </li>
+                <li class="splide__slide">
+                  <img
+                    src="https://source.unsplash.com/random/1000x1000?sig=4"
+                    alt="image"
+                  />
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- Thumbnail Navigation Slider -->
+          <ul id="thumbnails-1" class="thumbnails">
+            <li class="thumbnail-1">
+              <img
+                src="https://source.unsplash.com/random/1000x1000?sig=1"
+                alt="image"
+              />
+            </li>
+            <li class="thumbnail-1">
+              <img
+                src="https://source.unsplash.com/random/1000x1000?sig=2"
+                alt="image"
+              />
+            </li>
+            <li class="thumbnail-1">
+              <img
+                src="https://source.unsplash.com/random/1000x1000?sig=3"
+                alt="image"
+              />
+            </li>
+            <li class="thumbnail-1">
+              <img
+                src="https://source.unsplash.com/random/1000x1000?sig=4"
+                alt="image"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <div class="details-container">
+          <div class="product-details">
+            <h2>PRODUCT TITLE</h2>
+            <div>
+              <img src="images/stars.svg" alt="" /><span>4.8/5</span
+              ><span><a href="#">See all Reviews</a></span>
+            </div>
+            <p>
+              Sed velit lectus, porttitor eu convallis sit amet, semper eget
+              mauris. Integer in pulvinar mauris. Donec facilisis placerat.
+            </p>
+            <div>
+              <div>
+                <img src="images/done.svg" alt="" />
+                <p>Lorem ipsum dolor</p>
+              </div>
+              <div>
+                <img src="images/done.svg" alt="" />
+                <p>Lorem ipsum dolor</p>
+              </div>
+              <div>
+                <img src="images/done.svg" alt="" />
+                <p>Lorem ipsum dolor</p>
+              </div>
+            </div>
+            <div>
+              <p>50% Discount</p>
+            </div>
+            <div>
+              <p>US$500.00</p>
+              <span>$1000.00</span>
+            </div>
+            <div>
+              <button href="#" class="buttons">ADD TO CART</button>
+            </div>
+            <div>
+              <p>100-Night Risk-Free Trial + Free Delivery & Returns</p>
+            </div>
+            <div>
+              <img src="images/ideal.svg" alt="image" />
+              <img src="images/klarna.svg fill.svg" alt="image" />
+              <img src="images/visa.svg" alt="image" />
+              <img src="images/paypal.svg.svg" alt="image" />
+              <img src="images/mastercard.svg fill.svg" alt="image" />
+              <img src="images/sepa.svg fill.svg" alt="image" />
+            </div>
+            <div>
+              <h2>Product Details</h2>
+              <div class="dropdown-container">
+                <div
+                  class="dropdown-item"
+                  onclick="toggleDropdown('details-dropdown')"
+                >
+                  <span class="icon">&#x1F4C4; Details</span>
+                  <span class="arrow">&#x203A;</span>
+                </div>
+                <div id="details-dropdown" class="dropdown-content">
+                  <p>Product details here...</p>
+                </div>
+
+                <div
+                  class="dropdown-item"
+                  onclick="toggleDropdown('size-weight-dropdown')"
+                >
+                  <span class="icon">&#x1F4C8; Size & Weight</span>
+                  <span class="arrow">&#x203A;</span>
+                </div>
+                <div id="size-weight-dropdown" class="dropdown-content">
+                  <p>Size and weight information...</p>
+                </div>
+
+                <div
+                  class="dropdown-item"
+                  onclick="toggleDropdown('shipping-policy-dropdown')"
+                >
+                  <span class="icon">&#x1F4E6; Shipping Policy</span>
+                  <span class="arrow">&#x203A;</span>
+                </div>
+                <div id="shipping-policy-dropdown" class="dropdown-content">
+                  <p>Shipping policy details...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="soft-section">
       <div class="soft-container">
@@ -487,6 +643,7 @@
     </footer>
 
     <script src="swiper-bundle.min.js"></script>
+    <script src="splide.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

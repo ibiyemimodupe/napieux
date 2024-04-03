@@ -14,31 +14,9 @@ document.querySelector(".burger").addEventListener("click", () => {
 
 window.addEventListener("scroll", closeMenu);
 
-// document.querySelectorAll(".feature-buttons button").forEach((button) => {
-//   button.addEventListener("click", function () {
-//     const imgSrc = this.getAttribute("data-img-src");
-//     document.getElementById("feature-image").src = imgSrc;
-//   });
-// });
-
-// document.querySelectorAll(".feature-buttons button").forEach((button) => {
-//   button.addEventListener("click", function () {
-//     // Remove active class from all buttons
-//     document.querySelectorAll(".feature-buttons button").forEach((btn) => {
-//       btn.classList.remove("active");
-//     });
-
-//     // Add active class to clicked button
-//     this.classList.add("active");
-
-//     // Update image src
-//     const imgSrc = this.getAttribute("data-img-src");
-//     document.getElementById("feature-image").src = imgSrc;
-//   });
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".feature-buttons button");
+  if (!buttons) return;
 
   // Set up click event listeners for each button
   buttons.forEach((button) => {
@@ -71,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".image-resize");
+  if (images.length < 2) return;
 
   // Function to resize images
   function resizeImages(leftBig) {
@@ -231,3 +210,60 @@ document.addEventListener("click", function (e) {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  let node = document.querySelector("#main-slider-1");
+  if (!node) return;
+
+  // Slider 1
+  var splide1 = new Splide("#main-slider-1", {
+    type: "loop",
+    width: 600,
+    height: 500,
+    pagination: false,
+    arrows: false,
+    cover: true,
+    breakpoints: {
+      768: {
+        width: "100%",
+        height: 300,
+        arrows: false,
+      },
+    },
+  });
+
+  var thumbnails1 = document.getElementsByClassName("thumbnail-1");
+  var current1;
+
+  for (var i = 0; i < thumbnails1.length; i++) {
+    initThumbnail1(thumbnails1[i], i);
+  }
+
+  function initThumbnail1(thumbnail, index) {
+    thumbnail.addEventListener("click", function () {
+      splide1.go(index);
+    });
+  }
+
+  splide1.on("mounted move", function () {
+    var thumbnail = thumbnails1[splide1.index];
+
+    if (thumbnail) {
+      if (current1) {
+        current1.classList.remove("is-active");
+      }
+
+      thumbnail.classList.add("is-active");
+      current1 = thumbnail;
+    }
+  });
+
+  splide1.mount();
+});
+
+function toggleDropdown(id) {
+  var content = document.getElementById(id);
+  content.style.display = content.style.display === "block" ? "none" : "block";
+  // Toggle active class to rotate arrow
+  content.previousElementSibling.classList.toggle("active");
+}

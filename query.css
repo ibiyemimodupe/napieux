@@ -70,6 +70,18 @@
     width: 87%;
     margin: auto;
   }
+
+  /* splide slide */
+  .showcase-container {
+    flex-direction: column;
+  }
+  .slider-container,
+  .details-container {
+    width: 100%;
+  }
+  .splide__track {
+    border-radius: 31.07px 0px 31.07px 0px;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1040px) {
