@@ -1320,16 +1320,27 @@ footer {
   width: 87%;
   margin: auto;
   gap: 46px;
+  justify-content: space-around;
 }
-
+.soft-image,
+.soft-image2,
+.soft-content {
+  width: 50%;
+}
 .soft-image img {
   width: 100%;
   max-width: 565px;
   height: auto;
   border-radius: 80px 0px 80px 0px;
 }
+.soft-image2 img {
+  width: 100%;
+  max-width: 565px;
+  height: auto;
+  border-radius: 0px 80px 0px 80px;
+}
 .soft-content {
-  flex: 1;
+  /* flex: 1; */
   max-width: 492px;
 }
 .soft-flip-cont {
@@ -1358,6 +1369,11 @@ footer {
   }
   .soft-container {
     flex-direction: column;
+  }
+  .soft-image,
+  .soft-image2,
+  .soft-content {
+    width: 100%;
   }
   .soft-flip {
     flex-direction: column-reverse;

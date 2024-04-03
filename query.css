@@ -91,10 +91,6 @@
   .product-details {
     padding: 24px 0px;
   }
-  .product-showcase {
-    /* z-index: 1000;
-    position: relative; */
-  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1040px) {
