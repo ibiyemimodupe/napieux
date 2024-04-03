@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var splide1 = new Splide("#main-slider-1", {
     type: "loop",
     width: 600,
-    height: 500,
+    height: 700,
     pagination: false,
     arrows: false,
     cover: true,

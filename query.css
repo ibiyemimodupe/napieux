@@ -3,7 +3,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    height: 40vh;
+    height: 50vh;
     width: 100%;
     background-color: #181818;
     display: flex;
@@ -14,7 +14,13 @@
     transform: translateY(-100%);
     transition: transform 0.5s ease-in;
   }
-
+  .navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
   .nav-links.active {
     transform: translateX(0%);
   }
@@ -81,6 +87,13 @@
   }
   .splide__track {
     border-radius: 31.07px 0px 31.07px 0px;
+  }
+  .product-details {
+    padding: 24px 0px;
+  }
+  .product-showcase {
+    /* z-index: 1000;
+    position: relative; */
   }
 }
 
