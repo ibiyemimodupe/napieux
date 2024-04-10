@@ -307,7 +307,7 @@ body {
 
 .benefit-image img {
   width: 100%;
-  max-width: 250px;
+  /* max-width: 250px; */
   height: auto;
 }
 
@@ -325,7 +325,15 @@ body {
 .benefit-content {
   padding-bottom: 50px;
 }
-
+#img1 {
+  max-width: 500px;
+}
+#img2 {
+  max-width: 195px;
+}
+#img3 {
+  max-width: 250px;
+}
 /* product-feature */
 .product-features-container {
   display: flex;
@@ -814,7 +822,7 @@ body {
   font-size: clamp(20px, 2.5vw, 22.89px);
   font-weight: 400;
   line-height: 1.25;
-  color: black;
+  color: white;
 }
 .shop-link {
   display: inline-block;
@@ -830,7 +838,8 @@ body {
   line-height: 1.125;
 }
 .cover1 {
-  background-image: url("images/covers1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("images/covers1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -840,7 +849,8 @@ body {
 }
 
 .cover2 {
-  background-image: url("images/covers2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("images/covers2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -850,7 +860,8 @@ body {
 }
 
 .cover3 {
-  background-image: url("images/covers3.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("images/covers3.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -931,7 +942,7 @@ body {
 }
 
 .accordion-button .arrow {
-  font-size: 25px;
+  font-size: 35px;
   float: right;
   width: 30px;
   height: 30px;
@@ -949,6 +960,7 @@ body {
 
 .accordion-button.active .arrow {
   background-color: black;
+  padding-bottom: 5px;
   color: white;
   transform: rotate(90deg);
 }

@@ -250,6 +250,16 @@
   .soft-image img {
     max-width: 100%;
   }
+
+  #img1 {
+    max-width: 220px;
+  }
+  #img2 {
+    max-width: 220px;
+  }
+  #img3 {
+    max-width: 250px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1000px) {
@@ -292,6 +302,14 @@
     --top-padding: 50px;
   }
 }
+@media screen and (min-width: 0px) and (max-width: 650px) {
+  .benefit-content p {
+    padding-bottom: 4rem;
+  }
+  .book-btn {
+    padding: 0 40px 60px 0;
+  }
+}
 @media screen and (min-width: 0px) and (max-width: 285px) {
   .product-rating {
     display: flex;
@@ -309,5 +327,13 @@
   }
   .thumbnail-1 {
     height: auto;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 350px) {
+  .book-btn {
+    padding: 0 0 120px 0;
+  }
+  .benefit-content p {
+    padding-bottom: 1rem;
   }
 }
