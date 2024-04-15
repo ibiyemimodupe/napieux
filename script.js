@@ -14,18 +14,77 @@ document.querySelector(".burger").addEventListener("click", () => {
 
 window.addEventListener("scroll", closeMenu);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".feature-buttons button");
-  if (!buttons) return;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const buttons = document.querySelectorAll(".feature-buttons button");
+//   if (!buttons) return;
 
+//   buttons.forEach((button) => {
+//     button.addEventListener("click", function () {
+//       buttons.forEach((btn) => {
+//         btn.classList.remove("active");
+//       });
+
+//       this.classList.add("active");
+
+//       const imgSrc1 = this.getAttribute("data-img-src1");
+//       const imgSrc2 = this.getAttribute("data-img-src2");
+//       document.getElementById("feature-image1").src = imgSrc1;
+//       document.getElementById("feature-image2").src = imgSrc2;
+//     });
+//   });
+
+//   if (buttons.length > 0) {
+//     buttons[0].classList.add("active");
+//     // Optionally, set the image associated with the first button as visible
+//     const imgSrc1 = buttons[0].getAttribute("data-img-src1");
+//     const imgSrc2 = buttons[0].getAttribute("data-img-src2");
+//     document.getElementById("feature-image1").src = imgSrc1;
+//     document.getElementById("feature-image2").src = imgSrc2;
+//   }
+// });
+// document.addEventListener("DOMContentLoaded", () => {
+//   const images = document.querySelectorAll(".image-resize");
+//   if (images.length < 2) return;
+
+//   function resizeImages(leftBig) {
+//     if (leftBig) {
+//       images[0].style.width = "60%";
+//       images[1].style.width = "40%";
+//     } else {
+//       images[0].style.width = "40%";
+//       images[1].style.width = "60%";
+//     }
+//   }
+
+//   resizeImages(true);
+
+//   window.addEventListener("mousemove", (e) => {
+//     const screenWidth = window.innerWidth;
+//     const hoverSideLeft = e.clientX < screenWidth / 2;
+//     resizeImages(hoverSideLeft);
+//   });
+
+//   let clickToggle = false;
+//   window.addEventListener("click", () => {
+//     clickToggle = !clickToggle;
+//     resizeImages(clickToggle);
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+  Split(["#feature-image1", "#feature-image2"], {
+    sizes: [30, 70], // Initial size ratios in percentages
+    minSize: [200, 200], // Minimum sizes in pixels
+    gutterSize: 10, // Size of the gutter in pixels
+    cursor: "col-resize", // Cursor type on gutter hover
+  });
+
+  // Existing button functionality to update images
+  const buttons = document.querySelectorAll(".feature-buttons button");
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
-      buttons.forEach((btn) => {
-        btn.classList.remove("active");
-      });
-
+      buttons.forEach((btn) => btn.classList.remove("active"));
       this.classList.add("active");
-
       const imgSrc1 = this.getAttribute("data-img-src1");
       const imgSrc2 = this.getAttribute("data-img-src2");
       document.getElementById("feature-image1").src = imgSrc1;
@@ -34,41 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (buttons.length > 0) {
-    buttons[0].classList.add("active");
-    // Optionally, set the image associated with the first button as visible
-    const imgSrc1 = buttons[0].getAttribute("data-img-src1");
-    const imgSrc2 = buttons[0].getAttribute("data-img-src2");
-    document.getElementById("feature-image1").src = imgSrc1;
-    document.getElementById("feature-image2").src = imgSrc2;
+    buttons[0].click(); // Auto-select the first button
   }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".image-resize");
-  if (images.length < 2) return;
-
-  function resizeImages(leftBig) {
-    if (leftBig) {
-      images[0].style.width = "60%";
-      images[1].style.width = "40%";
-    } else {
-      images[0].style.width = "40%";
-      images[1].style.width = "60%";
-    }
-  }
-
-  resizeImages(true);
-
-  window.addEventListener("mousemove", (e) => {
-    const screenWidth = window.innerWidth;
-    const hoverSideLeft = e.clientX < screenWidth / 2;
-    resizeImages(hoverSideLeft);
-  });
-
-  let clickToggle = false;
-  window.addEventListener("click", () => {
-    clickToggle = !clickToggle;
-    resizeImages(clickToggle);
-  });
 });
 
 var swiper = new Swiper(".mySwiper", {

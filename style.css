@@ -345,10 +345,41 @@ body {
   width: 87%;
   box-sizing: border-box;
 }
+.split {
+  display: flex;
+  flex-direction: row;
+}
+.gutter {
+  background: url("images/button.svg") no-repeat center center;
+  background-color: #eee;
+  width: 20px; /* Adjust based on the width of your button image */
+  cursor: col-resize;
+}
+.gutter.gutter-horizontal {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+  height: 100%;
+  cursor: col-resize;
+}
 .product-features-interaction {
   display: flex;
+  flex-direction: row;
   width: 100%;
-  justify-content: center;
+  gap: 34px;
+}
+.feature-buttons {
+  overflow-y: auto;
+}
+.feature-image-display {
+  height: 509px;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.feature-image-display img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 .product-features-description {
   padding: 60px 0;
@@ -390,17 +421,6 @@ body {
 }
 .feature-buttons button.active {
   border-left: 4px solid black;
-}
-.feature-image-display {
-  gap: 10px;
-  flex-grow: 1;
-  max-width: 100%;
-}
-.image-resize {
-  width: 100%;
-  max-width: 45%;
-  object-fit: cover;
-  transition: width 0.6s ease-in-out;
 }
 #feature-image1 {
   border-radius: 20px 0 0 20px;

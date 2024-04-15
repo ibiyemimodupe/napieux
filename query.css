@@ -79,7 +79,7 @@
     align-items: center;
   }
   .feature-image-display {
-    flex-direction: column;
+    height: 300px;
   }
   .feature-buttons {
     flex-wrap: wrap;
