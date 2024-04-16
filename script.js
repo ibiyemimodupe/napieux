@@ -97,6 +97,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  Split(["#split-0", "#split-1"], {
+    sizes: [70, 30], // Equal initial sizes for both panels
+    minSize: [300, 300], // You can adjust this to set a minimum width
+    gutterSize: 10, // Gutter size between the panels
+    cursor: "col-resize", // Cursor when resizing
+    direction: "horizontal",
+    expandToMin: false,
+  });
+});
+
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   loop: true,
