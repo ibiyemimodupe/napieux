@@ -74,7 +74,7 @@ window.addEventListener("scroll", closeMenu);
 document.addEventListener("DOMContentLoaded", () => {
   Split(["#feature-image1", "#feature-image2"], {
     sizes: [30, 70], // Initial size ratios in percentages
-    minSize: [200, 200], // Minimum sizes in pixels
+    minSize: [200, 100], // Minimum sizes in pixels
     gutterSize: 10, // Size of the gutter in pixels
     cursor: "col-resize", // Cursor type on gutter hover
   });
@@ -98,14 +98,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  Split(["#split-0", "#split-1"], {
-    sizes: [70, 30], // Equal initial sizes for both panels
-    minSize: [300, 300], // You can adjust this to set a minimum width
-    gutterSize: 10, // Gutter size between the panels
-    cursor: "col-resize", // Cursor when resizing
-    direction: "horizontal",
-    expandToMin: false,
+  const splitInstance = Split(["#split-0", "#split-1"], {
+    sizes: [80, 20], // Initial size ratios
+    minSize: [100, 300], // Minimum sizes in pixels
+    gutterSize: 10, // Gutter size
+    cursor: "col-resize",
+    onDrag: setDisplayProperties, // Sets display properties on drag
   });
+
+  // Set initial display properties based on initial setup
+  setDisplayProperties(splitInstance.getSizes());
+
+  // Function to set display properties during dragging and on initial load
+  function setDisplayProperties(sizes) {
+    const panel1 = document.getElementById("split-0");
+    const panel2 = document.getElementById("split-1");
+    const imgContainer1 = panel1.querySelector(".feature-split1-img");
+    const imgContainer2 = panel2.querySelector(".feature-split2-img");
+    const text1 = panel1.querySelector(".feature-split-text");
+    const text2 = panel2.querySelector(".feature-split-text");
+
+    updatePanelDisplay(imgContainer1, text1, sizes[0]);
+    updatePanelDisplay(imgContainer2, text2, sizes[1]);
+  }
+
+  // Update display based on current panel size
+  function updatePanelDisplay(imgContainer, text, size) {
+    if (size < 40) {
+      imgContainer.style.display = "none"; // Hide image container
+      text.style.width = "100%"; // Expand text to full width
+    } else {
+      imgContainer.style.display = "block"; // Show image container
+      text.style.width = "auto"; // Revert text width
+    }
+  }
 });
 
 var swiper = new Swiper(".mySwiper", {

@@ -1455,6 +1455,9 @@ footer {
   background: #cd9100;
   border-radius: 0 40px 40px 0;
 }
+.bed-mobile {
+  display: none;
+}
 .feature-split1,
 .feature-split2 {
   flex: 1;
@@ -1466,6 +1469,21 @@ footer {
   object-fit: cover;
   flex-shrink: 0;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-split1-img,
+.feature-split2-img {
+  transition: opacity 0.3s ease; /* Smooth transition for opacity changes */
+}
+
+.feature-split-text {
+  width: 100%; /* Ensures the text content can expand */
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px 10px 30px 20px;
 }
 
 .feature-split1-img img,

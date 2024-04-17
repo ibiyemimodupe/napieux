@@ -260,6 +260,30 @@
   #img3 {
     max-width: 250px;
   }
+
+  /* feature */
+  .feature-split1-img img,
+  .feature-split2-img img {
+    display: none;
+  }
+  #split1-container {
+    height: 550px;
+  }
+  .bed-mobile {
+    display: block;
+    object-fit: cover;
+  }
+  .feature-split1 {
+    /* padding: 20px; */
+    flex-direction: column;
+    align-items: start;
+    height: 550px;
+  }
+  .feature-split2 {
+    flex-direction: column-reverse;
+    align-items: start;
+    height: 550px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1000px) {
