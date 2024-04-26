@@ -72,12 +72,12 @@ window.addEventListener("scroll", closeMenu);
 // });
 
 document.addEventListener("DOMContentLoaded", () => {
-  Split(["#feature-image1", "#feature-image2"], {
-    sizes: [30, 70], // Initial size ratios in percentages
-    minSize: [200, 100], // Minimum sizes in pixels
-    gutterSize: 10, // Size of the gutter in pixels
-    cursor: "col-resize", // Cursor type on gutter hover
-  });
+  // Split(["#feature-image1", "#feature-image2"], {
+  //   sizes: [30, 70], // Initial size ratios in percentages
+  //   minSize: [200, 100], // Minimum sizes in pixels
+  //   gutterSize: 10, // Size of the gutter in pixels
+  //   cursor: "col-resize", // Cursor type on gutter hover
+  // });
 
   // Existing button functionality to update images
   const buttons = document.querySelectorAll(".feature-buttons button");
@@ -311,3 +311,9 @@ function toggleDropdown(id) {
 
   content.previousElementSibling.classList.toggle("active");
 }
+$(window).on("load", function () {
+  $(".twentytwenty-container").twentytwenty({
+    default_offset_pct: 0.6, // Adjust if you want different starting split point
+    orientation: "horizontal", // 'horizontal' or 'vertical'
+  });
+});

@@ -12,6 +12,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/split.js/dist/split.min.js"></script>
     <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <link rel="stylesheet" href="twentytwenty.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="query.css" />
   </head>
@@ -164,47 +165,41 @@
           <h1>Our Top Features</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
         </div>
-        <div class="product-features-interaction" id="split-container">
+        <div class="product-features-interaction">
           <div class="feature-buttons">
             <button
-              data-img-src1="https://source.unsplash.com/random/1000x1000?sig=1"
-              data-img-src2="https://source.unsplash.com/random/1000x1000?sig=2"
+              data-img-src1="images/cool.svg"
+              data-img-src2="images/warm.svg"
             >
               Warm/Cold Side
             </button>
             <button
-              data-img-src1="https://source.unsplash.com/random/1000x1000?sig=3"
-              data-img-src2="https://source.unsplash.com/random/1000x1000?sig=4"
+              data-img-src1="images/warm.svg"
+              data-img-src2="images/cool.svg"
             >
               Soft/Hard Side
             </button>
             <button
-              data-img-src1="https://source.unsplash.com/random/1000x1000?sig=5"
-              data-img-src2="https://source.unsplash.com/random/1000x1000?sig=6"
+              data-img-src1="images/cool.svg"
+              data-img-src2="images/warm.svg"
             >
               Adjustable Height
             </button>
             <button
-              data-img-src1="https://source.unsplash.com/random/1000x1000?sig=7"
-              data-img-src2="https://source.unsplash.com/random/1000x1000?sig=8"
+              data-img-src1="images/warm.svg"
+              data-img-src2="images/cool.svg"
             >
               Premium Memory Foam
             </button>
           </div>
-          <div class="feature-image-display split">
-            <img
-              id="feature-image1"
-              src=""
-              alt="Feature Image 1"
-              class="image-resize"
-            />
-
-            <img
-              id="feature-image2"
-              src=""
-              alt="Feature Image 2"
-              class="image-resize"
-            />
+          <div class="ig">
+            <div
+              id="container1"
+              class="twentytwenty-container feature-image-display"
+            >
+              <img id="feature-image1" data-img-src1="" />
+              <img id="feature-image2" data-img-src2="" />
+            </div>
           </div>
         </div>
       </div>
@@ -331,6 +326,25 @@
 
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <section style="width: 87%; max-width: 1440px; margin: auto">
+      <div
+        style="margin-bottom: 3rem"
+        id="container1"
+        class="twentytwenty-container"
+      >
+        <img src="images/cool.svg" />
+        <img src="images/warm.svg" />
+      </div>
+      <div
+        style="margin-bottom: 3rem"
+        id="container1"
+        class="twentytwenty-container"
+      >
+        <img src="images/warm.svg" />
+        <img src="images/cool.svg" />
       </div>
     </section>
 
@@ -902,6 +916,9 @@
     </footer>
 
     <script src="swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.event.move.js"></script>
+    <script src="jquery.twentytwenty.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
