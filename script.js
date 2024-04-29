@@ -14,72 +14,7 @@ document.querySelector(".burger").addEventListener("click", () => {
 
 window.addEventListener("scroll", closeMenu);
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const buttons = document.querySelectorAll(".feature-buttons button");
-//   if (!buttons) return;
-
-//   buttons.forEach((button) => {
-//     button.addEventListener("click", function () {
-//       buttons.forEach((btn) => {
-//         btn.classList.remove("active");
-//       });
-
-//       this.classList.add("active");
-
-//       const imgSrc1 = this.getAttribute("data-img-src1");
-//       const imgSrc2 = this.getAttribute("data-img-src2");
-//       document.getElementById("feature-image1").src = imgSrc1;
-//       document.getElementById("feature-image2").src = imgSrc2;
-//     });
-//   });
-
-//   if (buttons.length > 0) {
-//     buttons[0].classList.add("active");
-//     // Optionally, set the image associated with the first button as visible
-//     const imgSrc1 = buttons[0].getAttribute("data-img-src1");
-//     const imgSrc2 = buttons[0].getAttribute("data-img-src2");
-//     document.getElementById("feature-image1").src = imgSrc1;
-//     document.getElementById("feature-image2").src = imgSrc2;
-//   }
-// });
-// document.addEventListener("DOMContentLoaded", () => {
-//   const images = document.querySelectorAll(".image-resize");
-//   if (images.length < 2) return;
-
-//   function resizeImages(leftBig) {
-//     if (leftBig) {
-//       images[0].style.width = "60%";
-//       images[1].style.width = "40%";
-//     } else {
-//       images[0].style.width = "40%";
-//       images[1].style.width = "60%";
-//     }
-//   }
-
-//   resizeImages(true);
-
-//   window.addEventListener("mousemove", (e) => {
-//     const screenWidth = window.innerWidth;
-//     const hoverSideLeft = e.clientX < screenWidth / 2;
-//     resizeImages(hoverSideLeft);
-//   });
-
-//   let clickToggle = false;
-//   window.addEventListener("click", () => {
-//     clickToggle = !clickToggle;
-//     resizeImages(clickToggle);
-//   });
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Split(["#feature-image1", "#feature-image2"], {
-  //   sizes: [30, 70], // Initial size ratios in percentages
-  //   minSize: [200, 100], // Minimum sizes in pixels
-  //   gutterSize: 10, // Size of the gutter in pixels
-  //   cursor: "col-resize", // Cursor type on gutter hover
-  // });
-
-  // Existing button functionality to update images
   const buttons = document.querySelectorAll(".feature-buttons button");
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -93,46 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (buttons.length > 0) {
-    buttons[0].click(); // Auto-select the first button
+    buttons[0].click();
   }
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const splitInstance = Split(["#split-0", "#split-1"], {
-//     sizes: [80, 20], // Initial size ratios
-//     minSize: [100, 300], // Minimum sizes in pixels
-//     gutterSize: 10, // Gutter size
-//     cursor: "col-resize",
-//     onDrag: setDisplayProperties, // Sets display properties on drag
-//   });
-
-//   // Set initial display properties based on initial setup
-//   setDisplayProperties(splitInstance.getSizes());
-
-//   // Function to set display properties during dragging and on initial load
-//   function setDisplayProperties(sizes) {
-//     const panel1 = document.getElementById("split-0");
-//     const panel2 = document.getElementById("split-1");
-//     const imgContainer1 = panel1.querySelector(".feature-split1-img");
-//     const imgContainer2 = panel2.querySelector(".feature-split2-img");
-//     const text1 = panel1.querySelector(".feature-split-text");
-//     const text2 = panel2.querySelector(".feature-split-text");
-
-//     updatePanelDisplay(imgContainer1, text1, sizes[0]);
-//     updatePanelDisplay(imgContainer2, text2, sizes[1]);
-//   }
-
-//   // Update display based on current panel size
-//   function updatePanelDisplay(imgContainer, text, size) {
-//     if (size < 40) {
-//       imgContainer.style.display = "none"; // Hide image container
-//       text.style.width = "100%"; // Expand text to full width
-//     } else {
-//       imgContainer.style.display = "block"; // Show image container
-//       text.style.width = "auto"; // Revert text width
-//     }
-//   }
-// });
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
@@ -219,61 +117,44 @@ document.querySelectorAll(".accordion-button").forEach((button) => {
 });
 
 document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const ul = toggle.nextElementSibling;
-    const isActive = toggle.classList.contains("active");
+  toggle.addEventListener("click", function () {
+    const ul = this.nextElementSibling;
+    const isActive = this.classList.contains("active");
 
+    // Close all other accordions
+    document.querySelectorAll(".accordion-toggle").forEach((otherToggle) => {
+      if (otherToggle !== this) {
+        otherToggle.classList.remove("active");
+        otherToggle.nextElementSibling.style.maxHeight = null;
+        otherToggle.nextElementSibling.style.paddingBottom = "0";
+      }
+    });
+
+    // Toggle current accordion
     if (isActive) {
-      toggle.classList.remove("active");
-      setTimeout(() => {
-        ul.style.maxHeight = "0";
-      }, 10);
+      this.classList.remove("active");
+      ul.style.maxHeight = null;
+      ul.style.paddingBottom = "0";
     } else {
-      document.querySelectorAll(".accordion-toggle").forEach((t) => {
-        if (t !== toggle) {
-          t.classList.remove("active");
-          t.nextElementSibling.style.maxHeight = "0";
-        }
-      });
-
-      toggle.classList.add("active");
-      ul.style.paddingTop = "20px";
+      this.classList.add("active");
+      ul.style.paddingBottom = "20px";
       ul.style.maxHeight = ul.scrollHeight + "px";
     }
   });
 });
 
 document.addEventListener("click", function (e) {
-  const isToggle =
-    e.target.matches(".accordion-toggle") ||
-    e.target.closest(".accordion-toggle");
-  if (!isToggle) {
+  if (
+    !e.target.matches(".accordion-toggle") &&
+    !e.target.closest(".accordion-toggle")
+  ) {
     document.querySelectorAll(".accordion-toggle").forEach((toggle) => {
       toggle.classList.remove("active");
-      toggle.nextElementSibling.style.maxHeight = "0";
+      toggle.nextElementSibling.style.maxHeight = null;
+      toggle.nextElementSibling.style.paddingBottom = "0";
     });
   }
 });
-
-// $(document).ready(function () {
-//   $(".accordion-toggle").click(function () {
-//     // Toggle the current panel and close others
-//     $(this).next("ul.fds").slideToggle("medium").toggleClass("open");
-//     $(".fds").not($(this).next()).slideUp("medium").removeClass("open");
-
-//     // Toggle arrow rotation
-//     $(this).toggleClass("rotate-arrow");
-//     $(".accordion-toggle").not(this).removeClass("rotate-arrow");
-//   });
-
-//   // Close all panels if user clicks outside
-//   $(document).click(function (e) {
-//     if (!$(e.target).closest(".hero-footer-text").length) {
-//       $(".fds").slideUp("medium").removeClass("open");
-//       $(".accordion-toggle").removeClass("rotate-arrow");
-//     }
-//   });
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
   let node = document.querySelector("#main-slider-1");
@@ -354,7 +235,7 @@ function toggleDropdown(id) {
 
 $(window).on("load", function () {
   $(".twentytwenty-container").twentytwenty({
-    default_offset_pct: 0.6, // Adjust if you want different starting split point
-    orientation: "horizontal", // 'horizontal' or 'vertical'
+    default_offset_pct: 0.6,
+    orientation: "horizontal",
   });
 });

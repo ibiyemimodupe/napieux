@@ -179,18 +179,6 @@
     flex-direction: column;
     gap: 20px;
   }
-  .accordion-toggle::after {
-    content: "\203A";
-    display: inline-block;
-    font-size: 25px;
-    margin-left: 50px;
-    transform: rotate(0);
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .accordion-toggle.active::after {
-    transform: rotate(90deg);
-  }
   .hero-footer-social-icons {
     justify-content: center;
   }
@@ -203,34 +191,45 @@
   .trademark {
     padding-bottom: 1rem;
   }
-
-  .hero-footer-text ul {
-    display: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-  }
-
-  .accordion-toggle.active + ul {
-    display: block;
-    max-height: 500px;
-    transition: max-height 0.5s ease-out;
-  }
-
-  .accordion-toggle {
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    padding-bottom: 10px;
-    transition: border-bottom 0.3s ease-in-out;
-  }
   .accordion-toggle.active {
     border-bottom: 2px solid white;
   }
+  .hero-footer-text ul {
+    max-height: 0;
+    gap: 5px;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding-top 0.5s ease-out;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .accordion-toggle.active + ul {
+    max-height: 500px;
+    padding-top: 20px;
+  }
+
+  .accordion-toggle {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 10px 0;
+  }
+
+  .accordion-toggle::after {
+    content: "\203A";
+    display: inline-block;
+    transform: rotate(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .accordion-toggle.active::after {
+    transform: rotate(90deg);
+  }
 
   .hero-footer-text li {
-    padding: 10px;
+    padding: 10px 0;
   }
 
   /* product.html */
