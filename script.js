@@ -97,42 +97,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const splitInstance = Split(["#split-0", "#split-1"], {
-    sizes: [80, 20], // Initial size ratios
-    minSize: [100, 300], // Minimum sizes in pixels
-    gutterSize: 10, // Gutter size
-    cursor: "col-resize",
-    onDrag: setDisplayProperties, // Sets display properties on drag
-  });
+// document.addEventListener("DOMContentLoaded", function () {
+//   const splitInstance = Split(["#split-0", "#split-1"], {
+//     sizes: [80, 20], // Initial size ratios
+//     minSize: [100, 300], // Minimum sizes in pixels
+//     gutterSize: 10, // Gutter size
+//     cursor: "col-resize",
+//     onDrag: setDisplayProperties, // Sets display properties on drag
+//   });
 
-  // Set initial display properties based on initial setup
-  setDisplayProperties(splitInstance.getSizes());
+//   // Set initial display properties based on initial setup
+//   setDisplayProperties(splitInstance.getSizes());
 
-  // Function to set display properties during dragging and on initial load
-  function setDisplayProperties(sizes) {
-    const panel1 = document.getElementById("split-0");
-    const panel2 = document.getElementById("split-1");
-    const imgContainer1 = panel1.querySelector(".feature-split1-img");
-    const imgContainer2 = panel2.querySelector(".feature-split2-img");
-    const text1 = panel1.querySelector(".feature-split-text");
-    const text2 = panel2.querySelector(".feature-split-text");
+//   // Function to set display properties during dragging and on initial load
+//   function setDisplayProperties(sizes) {
+//     const panel1 = document.getElementById("split-0");
+//     const panel2 = document.getElementById("split-1");
+//     const imgContainer1 = panel1.querySelector(".feature-split1-img");
+//     const imgContainer2 = panel2.querySelector(".feature-split2-img");
+//     const text1 = panel1.querySelector(".feature-split-text");
+//     const text2 = panel2.querySelector(".feature-split-text");
 
-    updatePanelDisplay(imgContainer1, text1, sizes[0]);
-    updatePanelDisplay(imgContainer2, text2, sizes[1]);
-  }
+//     updatePanelDisplay(imgContainer1, text1, sizes[0]);
+//     updatePanelDisplay(imgContainer2, text2, sizes[1]);
+//   }
 
-  // Update display based on current panel size
-  function updatePanelDisplay(imgContainer, text, size) {
-    if (size < 40) {
-      imgContainer.style.display = "none"; // Hide image container
-      text.style.width = "100%"; // Expand text to full width
-    } else {
-      imgContainer.style.display = "block"; // Show image container
-      text.style.width = "auto"; // Revert text width
-    }
-  }
-});
+//   // Update display based on current panel size
+//   function updatePanelDisplay(imgContainer, text, size) {
+//     if (size < 40) {
+//       imgContainer.style.display = "none"; // Hide image container
+//       text.style.width = "100%"; // Expand text to full width
+//     } else {
+//       imgContainer.style.display = "block"; // Show image container
+//       text.style.width = "auto"; // Revert text width
+//     }
+//   }
+// });
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
@@ -255,6 +255,26 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// $(document).ready(function () {
+//   $(".accordion-toggle").click(function () {
+//     // Toggle the current panel and close others
+//     $(this).next("ul.fds").slideToggle("medium").toggleClass("open");
+//     $(".fds").not($(this).next()).slideUp("medium").removeClass("open");
+
+//     // Toggle arrow rotation
+//     $(this).toggleClass("rotate-arrow");
+//     $(".accordion-toggle").not(this).removeClass("rotate-arrow");
+//   });
+
+//   // Close all panels if user clicks outside
+//   $(document).click(function (e) {
+//     if (!$(e.target).closest(".hero-footer-text").length) {
+//       $(".fds").slideUp("medium").removeClass("open");
+//       $(".accordion-toggle").removeClass("rotate-arrow");
+//     }
+//   });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
   let node = document.querySelector("#main-slider-1");
   if (!node) return;
@@ -311,6 +331,27 @@ function toggleDropdown(id) {
 
   content.previousElementSibling.classList.toggle("active");
 }
+
+// function toggleDropdown(id) {
+//   var content = document.getElementById(id);
+//   // Get all dropdown contents
+//   var allContents = document.querySelectorAll('.dropdown-content');
+
+//   // Loop through all dropdown contents
+//   for (var i = 0; i < allContents.length; i++) {
+//     // If it's the current content, toggle its display
+//     if (allContents[i] === content) {
+//       content.style.display = content.style.display === "block" ? "none" : "block";
+//       // Toggle active class for the dropdown item
+//       content.previousElementSibling.classList.toggle("active");
+//     } else {
+//       // Hide other dropdowns and remove the active class
+//       allContents[i].style.display = "none";
+//       allContents[i].previousElementSibling.classList.remove("active");
+//     }
+//   }
+// }
+
 $(window).on("load", function () {
   $(".twentytwenty-container").twentytwenty({
     default_offset_pct: 0.6, // Adjust if you want different starting split point
